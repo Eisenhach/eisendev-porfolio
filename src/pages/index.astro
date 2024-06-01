@@ -1,0 +1,55 @@
+---
+import SectionContainer from "../components/SectionContainer.astro";
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
+import Hero from "../components/Hero.astro";
+import Proyectos from "../components/Proyectos.astro";
+import About from "../components/About.astro";
+import CodeIcon from "../icons/Code.icon.astro";
+import AboutIcon from "../icons/About.icon.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<script src="../components/main.js"></script>
+
+<Layout title="Portfolio Eisen - Desarrollador Fullstack de Argentina">
+  <main class="mx-auto px-4">
+    <SectionContainer>
+      <NavBar />
+    </SectionContainer>
+
+    <SectionContainer class="py-16 md:py-36">
+      <Hero />
+    </SectionContainer>
+    <div class="space-y-24">
+      <SectionContainer id="proyectos">
+        <h2
+          data-aos="fade-down"
+          class="flex text-white items-center mb-6 mt-10 text-3xl font-semibold gap-x-3"
+        >
+          <CodeIcon class="size-7" />
+          Proyectos
+        </h2>
+        <Proyectos />
+      </SectionContainer>
+
+      <SectionContainer dataAos="zoom-out" id="sobre-mi">
+        <h2
+          class="flex text-white items-center mb-6 text-3xl font-semibold gap-x-3"
+        >
+          <AboutIcon class="size-7" />
+          Sobre mi
+        </h2>
+        <About />
+      </SectionContainer>
+    </div>
+  </main>
+
+  <SectionContainer>
+    <footer>
+      <Footer />
+    </footer>
+  </SectionContainer>
+</Layout>
+
+<style></style>

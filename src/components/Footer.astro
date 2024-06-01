@@ -1,0 +1,32 @@
+---
+import Badge from "./Badge.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="opacity-80 mt-16 mx-auto container lg:max-w-4xl md:max-w-2xl text-center flex justify-center"
+>
+  <div
+    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
+  >
+    <ul
+      class="flex flex-wrap items-center justify-center mb-3 text-sm font-medium dark:text-white/90 sm:mt-0"
+    >
+      <li>
+        <a
+          id="contacto"
+          href="mailto:eisenhach.tomas@gmail.com"
+          class="hover:underline"><Badge>Contacto</Badge></a
+        >
+      </li>
+    </ul>
+  </div>
+  <span class="text-sm sm:text-center text-balance text-zinc-200/90"
+    >© {currentYear}
+    <a
+      href="https://www.linkedin.com/in/tom%C3%A1s-eisenhach-99a07924b/"
+      class="underline underline-offset-1">Eisendev</a
+    >. Todos los derechos reservados
+  </span>
+</footer>

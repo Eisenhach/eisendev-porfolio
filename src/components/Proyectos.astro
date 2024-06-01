@@ -1,0 +1,99 @@
+---
+import Tailwind from "../icons/Tailwind.icon.astro";
+import Hostinger from "../icons/Hostinger.icon.astro";
+import Linkicon from "../icons/Link.icon.astro";
+import LinkButton from "../components/LinkButton.astro";
+
+const TAGS = {
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  HOSTINGER: {
+    name: "Hostinger",
+    class: "bg-[#674cc4] text-white",
+    icon: Hostinger,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Domenika Sports - Ecommerce de ropa deportiva [Desarrollo]",
+    description:
+      "Tienda online de ropa deportiva con sistemas de pagos, ordenes, stock.",
+    link: "#",
+    image: "/image.jpg",
+    tags: [TAGS.HOSTINGER],
+  },
+  {
+    title: "Resto BB - Simple menu digital",
+    description:
+      "Menu digital para restaurante de formato sencillo y fácil de entender.",
+    link: "https://eisenhach.github.io/restoBB-Menu/index.html",
+    image: "/image.jpg",
+    tags: [TAGS.TAILWIND],
+  },
+  {
+    title:
+      "Odontologia Palermo - Agradable landing para franquicia odontologica ",
+    description:
+      "Sitio informativo que satisfacer a futuros clientes de Odontologica Palermo",
+    link: "#",
+    image: "/image.jpg",
+    tags: [TAGS.TAILWIND],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link }) => (
+      <article
+        data-aos="fade-left"
+        data-aos-once="true"
+        class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"
+      >
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt=""
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg md:items-center">
+          <h3 class="text-2xl font-bold text-gray-100">{title}</h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-400">{description}</div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {link && (
+                <LinkButton href={link}>
+                  <link class="size-4" />
+                  Visitar
+                  <Linkicon />
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
