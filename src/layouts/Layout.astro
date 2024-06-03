@@ -3,17 +3,22 @@ import "@fontsource/roboto";
 
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" , initial-scale="1/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="keywords"
+      content="Desarrollo de Sitios Web, Desarrollador Web Freelance, Desarrollo de sitios web profesionales, Proyectos de Desarrollo Web, Diseño de Sitios Web Personalizados, Optimización SEO para Sitios Web, Creación de Tiendas Online, Desarrollo de Webs Responsivas, Consultoría en Desarrollo Web, Mantenimiento de Sitios Web, Especialista en HTML, CSS y JavaScript, Mejora tu presencia online, Transforma tu negocio con un sitio web profesional, Desarrollo de soluciones web personalizadas, Aumenta tus ventas con una tienda online, Soluciones de desarrollo web para empresas"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
